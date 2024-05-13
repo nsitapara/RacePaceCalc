@@ -4,7 +4,7 @@ import calculatePace from "@/app/api/calculatePace";
 
 export async function POST(request: Request) {
   const data = await request.json()
-    console.log(data)
+
   const time = data["time"]
   if (time === "") {
     return NextResponse.json({error: 'Please provide a time'})
