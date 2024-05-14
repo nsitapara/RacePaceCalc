@@ -4,7 +4,7 @@ This project is built for calculating race pace with the given input of time in 
 
 Example:
 
-POST Call to `https://www.nsitapara.com/api` with :
+POST Call to `https://www.nsitapara.com/api/race-page` with :
 
 ```json
 {
@@ -25,8 +25,42 @@ Response:
 
 Two ways the project can be used:
 
-1. The project can be cloned and used locally.
-2. Use the deployed instance at [nsitapara.com/api](https://www.nsitapara.com/api) - Only Supports POST call.
+1. Use the deployed instance at [https://www.nsitapara.com/api/race-page](https://www.nsitapara.com/api/race-page)
+
+2. Clone the project and used locally or with your deployment.
+
+## Deployed (Easier)
+
+The user can just consume the service on a deployed instance by making a POST call with below payload to [nsitapara.com/api/race-pace](https://www.nsitapara.com/api/race-pace).
+
+To calculate the race pace, make a POST call to the URL: http://localhost:3000/api/race-pace with the following JSON payload:
+
+```json
+{
+  "time": "HH:MM:SS"
+}
+```
+Replace "HH:MM:SS" with the actual time in the format mentioned above.
+
+### Example
+
+POST Call to `https://www.nsitapara.com/api/race-pace` with :
+
+```json
+{
+  "time": "00:50:20"
+}
+```
+
+Returned Data:
+
+```json
+{
+  "pacePerMile": "00:08:06",
+  "pacePerKm": "00:05:02"
+}
+```
+
 
 ## Use locally
 
@@ -35,36 +69,15 @@ To run the project locally, follow these steps:
 0. Clone the repo to your machine
 1. Install the project dependencies by running `npm install` in the `racepacecalc` directory.
 2. Start the project by running `npm run dev`.
-3. Default port is 3000 - `http://localhost:3000/api`
+3. Default port is 3000 - `http://localhost:3000`
 4. From your consumer application make a POST call to the deployed service with below payload
+5. Only allowed endpoint is `http://localhost:3000/api/race-pace`
 
 ```json
 {
   "time": "HH:MM:SS"
 }
 ```
-
-## Deployed
-
-OR the user can just consume the service on a deployed instance by making a POST call with below payload to [nsitapara.com/api](https://www.nsitapara.com/api).
-
-To calculate the race pace, make a POST call to the API(http://localhost:3000/api if using local deployment) with the following JSON payload:
-
-```json
-{
-  "time": "HH:MM:SS"
-}
-```
-
-POST Call to `https://www.nsitapara.com/api` with :
-
-```json
-{
-  "time": "1:08:21"
-}
-```
-
-Replace "HH:MM:SS" with the actual time in the format mentioned above.
 
 ## License
 
