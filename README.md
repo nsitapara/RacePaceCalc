@@ -4,7 +4,7 @@ This project is built for calculating race pace with the given input of time in 
 
 Example:
 
-POST Call to `https://www.nsitapara.com/api/race-page` with :
+POST Call to `https://www.nsitapara.com/api/race-pace` with :
 
 ```json
 {
@@ -25,7 +25,7 @@ Response:
 
 Two ways the project can be used:
 
-1. Use the deployed instance at [https://www.nsitapara.com/api/race-page](https://www.nsitapara.com/api/race-page)
+1. Use the deployed instance at [https://www.nsitapara.com/api/race-pace](https://www.nsitapara.com/api/race-pace)
 
 2. Clone the project and used locally or with your deployment.
 
