@@ -1,4 +1,4 @@
-# Race Pace Calculation Microservice
+# Race Pace Calculation for 10K Microservice
 
 This project is built for calculating race pace with the given input of time in the format HH:MM:SS. It returns the calculation in both per mile and per KM.
 
