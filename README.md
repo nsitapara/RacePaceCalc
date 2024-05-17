@@ -23,7 +23,9 @@ Response:
   "pacePerKm": "11:02"
 }
 ```
+
 Below is a javascript code example of call that can be made from the backend.
+
 ```javascript
 async function makeFetchCall(time) {
   const url = "https://www.nsitapara.com/api/race-pace";
@@ -111,7 +113,3 @@ To run the project locally, follow these steps:
   "time": "HH:MM:SS"
 }
 ```
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more information.
