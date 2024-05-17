@@ -2,7 +2,10 @@
 
 This project is built for calculating race pace with the given input of time in the format HH:MM:SS. It returns the calculation in both per mile and per KM.
 
-Example:
+UML sequence diagram:
+![alt text](<UML Sequence Assignment 8.svg>)
+
+Example Usage:
 
 POST Call to `https://www.nsitapara.com/api/race-pace` with :
 
@@ -20,6 +23,38 @@ Response:
   "pacePerKm": "11:02"
 }
 ```
+Below is a javascript code example of call that can be made from the backend.
+```javascript
+async function makeFetchCall(time) {
+  const url = "https://www.nsitapara.com/api/race-pace";
+  const data = { time };
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+      const result = await response.json();
+      console.log(result);
+    } else {
+      console.error("Error:", response.status);
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+// User input
+const userInput = "00:50:08";
+
+console.log("User input: ", userInput);
+// Call the function with user input
+
+makeFetchCall(userInput);
+```
 
 ## API Usage
 
@@ -33,13 +68,12 @@ Two ways the project can be used:
 
 The user can just consume the service on a deployed instance by making a POST call with below payload to [nsitapara.com/api/race-pace](https://www.nsitapara.com/api/race-pace).
 
-To calculate the race pace, make a POST call to the URL: http://localhost:3000/api/race-pace with the following JSON payload:
-
 ```json
 {
   "time": "HH:MM:SS"
 }
 ```
+
 Replace "HH:MM:SS" with the actual time in the format mentioned above.
 
 ### Example
@@ -60,7 +94,6 @@ Returned Data:
   "pacePerKm": "00:05:02"
 }
 ```
-
 
 ## Use locally
 
